@@ -9,7 +9,7 @@ spec:
     namespace: test
     server: https://kubernetes.default.svc
   source:
-    path: guestbook-ui-deployment.yaml
+    path: dev
     repoURL: https://github.com/Peter-Mag/TOSC-CD.git
     targetRevision: HEAD
   sources: []
