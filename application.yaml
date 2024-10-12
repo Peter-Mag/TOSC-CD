@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: Guestbook
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: test
+    server: https://kubernetes.default.svc
+  source:
+    path: guestbook-ui-deployment.yaml
+    repoURL: https://github.com/Peter-Mag/TOSC-CD.git
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
